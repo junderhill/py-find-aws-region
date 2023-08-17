@@ -13,9 +13,7 @@ def get_regions_by_latency(includeRegions=[]):
     for region in regions:
         if len(includeRegions) > 0 and region['RegionName'] not in includeRegions:
             continue
-        # print (region)
         response, latency = time_http_request("https://"+region['Endpoint']+pingURLSuffix)
-        # print (response, latency)
         if response.status_code == 200:
             results.append({"region_name": region['RegionName'], "latency": latency})
 
