@@ -7,7 +7,6 @@ pingURLSuffix= "/ping"
 def get_regions_by_latency(includeRegions=[]):
     ec2_client = boto3.client('ec2')
     regions = ec2_client.describe_regions()['Regions']
-    region_names = [region['RegionName'] for region in regions]
 
     results = []
 
@@ -18,7 +17,7 @@ def get_regions_by_latency(includeRegions=[]):
         response, latency = time_http_request("https://"+region['Endpoint']+pingURLSuffix)
         # print (response, latency)
         if response.status_code == 200:
-            results.append({"regionName": region['RegionName'], "latency": latency})
+            results.append({"region_name": region['RegionName'], "latency": latency})
 
     return results
 
