@@ -4,7 +4,7 @@ Python package to choose the best AWS region based on latency.
 ## Basic Usage
 
 ```python
-from find_aws_region import find_aws_region
+from find_aws_regions import get_regions_by_latency
 
 results = get_regions_by_latency()
 
@@ -21,7 +21,7 @@ print(results)
 You can limit the tested regions by passing a list of region codes to `get_regions_by_latency()`:
 
 ```python
-from find_aws_region import get_regions_by_latency
+from find_aws_regions import get_regions_by_latency
 
 results = get_regions_by_latency(['us-east-1', 'us-west-2'])
 ```
