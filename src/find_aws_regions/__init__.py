@@ -17,6 +17,9 @@ def get_regions_by_latency(includeRegions=[]):
         if response.status_code == 200:
             results.append({"region_name": region['RegionName'], "latency": latency})
 
+
+    results.sort(key=lambda x: x['latency'])
+
     return results
 
 def time_http_request(url):

@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="find_aws_regions",
-    version="0.0.1",
+    version="0.0.3",
     author="Jason Underhill",
     author_email="jason@junderhill.com",
     description="Find the closest/best AWS region from your code bassed on latency",
@@ -22,6 +22,6 @@ setuptools.setup(
     python_requires='>=3.6',
     install_requires=[
         'boto3',
-        'requests',
+        'requests>=2.31.0',
     ],
 )
